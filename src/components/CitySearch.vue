@@ -49,9 +49,10 @@ export default {
     }
   },
   created () {
-    // TODO: Retreive the `favoriteCities` value from localstorage using this.$ls.get()
-    // HINT: Use a conditional to make sure the value exists!
-    let favorites = this.$ls.get(favorites)
+    // check to see if user has saved Favorite Cities in cache.
+    if (this.$ls.get('favoriteCities')){
+      let favorites = this.$ls.get('favoriteCities');
+    }
   },
   methods: {
     saveCity: function (city) {
