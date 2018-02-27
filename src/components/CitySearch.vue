@@ -8,7 +8,7 @@
     </form>
     <load-spinner v-if="showLoading"></load-spinner>
     <ul class="cities" v-if="results && results.list.length > 0">
-      <li v-for="city in results.list">
+      <li v-for="city in results.list" :key="city.id">
         <h2>{{ city.name }}, {{ city.sys.country }}</h2>
         <p><router-link v-bind:to="{ name: 'CurrentWeather', params: { cityId: city.id } }">View Current Weather</router-link></p>
 
@@ -55,8 +55,8 @@ export default {
   },
   methods: {
     saveCity: function (city) {
-      // TODO: Add logic to add the city to the this.favorites array and to add the city to the favoriteCities array
-
+      this.favorites.push(city);
+      this.$ls.set('favoriteCities', this.favorites);
     },
     getCities: function () {
       this.results = null;
