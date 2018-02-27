@@ -56,7 +56,9 @@ export default {
   methods: {
     saveCity: function (city) {
       this.favorites.push(city);
+      console.log('Added favorite city to component data.');
       this.$ls.set('favoriteCities', this.favorites);
+      console.log('Added favorite city array to local cache.');
     },
     getCities: function () {
       this.results = null;
