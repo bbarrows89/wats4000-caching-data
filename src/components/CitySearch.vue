@@ -27,7 +27,7 @@ import WeatherSummary from '@/components/WeatherSummary';
 import WeatherData from '@/components/WeatherData';
 import CubeSpinner from '@/components/CubeSpinner';
 import MessageContainer from '@/components/MessageContainer';
-// TODO: Add Favorite Cities child component import statement here
+import FavoriteCities from '@/components/FavoriteCities';
 
 
 export default {
