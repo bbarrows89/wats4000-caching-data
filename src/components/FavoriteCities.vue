@@ -22,8 +22,10 @@ export default {
       // Retrieve index position of city to remove, then splice out of array.
       let cityIndex = this.favoriteCities.indexOf(city);
       this.favoriteCities.splice(city, 1);
+      console.log('Removed a favorite city.');
       // Save the new favoriteCities array to the cache.
       this.$ls.set('favoriteCities', this.favoriteCities);
+      console.log('Removed a favorite city from cache.');
     }
   }
 }
