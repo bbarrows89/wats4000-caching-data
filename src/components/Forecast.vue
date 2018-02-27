@@ -46,10 +46,13 @@ export default {
   },
   created () {
     this.showLoading = true;
-
+    // Cache these API results using the City ID as the label
     let cacheLabel = 'forecast_' + this.$route.params.cityId;
     let cacheExpiry = 15 * 60 * 1000; // 15 minute expiration
     
+    // Check if the API query has been cached
+    //  If so, use that cached data
+    //  If not, make the API call and cache the data with the cacheLabel and cacheExpiry defined above
     if (this.$ls.get(cacheLabel)){
       console.log('Cached query detected.');
       this.weatherData = this.$ls.get(cacheLabel);
