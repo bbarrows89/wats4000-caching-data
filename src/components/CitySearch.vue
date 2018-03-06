@@ -51,7 +51,7 @@ export default {
   created () {
     // check to see if user has saved Favorite Cities in cache.
     if (this.$ls.get('favoriteCities')){
-      let favorites = this.$ls.get('favoriteCities');
+      this.favorites = this.$ls.get('favoriteCities');
     }
   },
   methods: {
